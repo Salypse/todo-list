@@ -1,0 +1,68 @@
+:root {
+    --primary-blue: #0b3954;
+    --secondary-blue: #087e8b;
+    --light-blue: #bfd7ea;
+
+    --primary-red: #ff5a5f;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+button {
+    padding: 1rem;
+
+    font-weight: 700;
+    color: var(--light-blue);
+
+    background-color: var(--secondary-blue);
+    border: 0.3rem solid var(--light-blue);
+    border-radius: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+
+    color: var(--secondary-blue);
+    background-color: var(--light-blue);
+    border-color: var(--secondary-blue);
+}
+
+button:active {
+    cursor: pointer;
+
+    color: var(--light-blue);
+    background-color: var(--secondary-blue);
+    border-color: var(--light-blue);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+    height: auto;
+    padding: 1rem;
+
+    color: var(--light-blue);
+    background-color: var(--primary-blue);
+}
+
+header > .logo {
+    font-size: 3rem;
+}
+
+header > button {
+    font-size: 1.5rem;
+    
+}
