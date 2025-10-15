@@ -49,6 +49,8 @@ button:active {
 }
 
 header {
+    grid-area: 1 / 1 / 2 / -1;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -95,4 +97,12 @@ header > button {
     text-align: center;
 
     text-decoration: underline;
+}
+
+.content {
+    grid-area: 2 / 2 / -1 / -1 ;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--primary-red);
 }
