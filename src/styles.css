@@ -59,7 +59,14 @@ header {
 }
 
 header > .logo {
+    display: flex;
+
     font-size: 3rem;
+}
+
+.logo > img {
+    width: 3vw;
+    height: auto;
 }
 
 header > button {
