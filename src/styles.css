@@ -106,3 +106,105 @@ header > button {
 
     background-color: var(--primary-light);
 }
+
+
+.new-project-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.new-project-item {
+    width: 20vw;
+    height: 20vh;
+
+    background-color: var(--primary-yellow);
+    border: 0.5rem solid var(--primary-blue);
+    border-radius: 0.3rem;
+}
+
+.new-project-item > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: auto;
+    padding: 0.2rem;
+
+    background-color: var(--primary-light);
+    border-bottom: 0.3rem solid var(--primary-blue);
+}
+
+.new-project-item > .header > p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.new-project-item > .header > button {
+    padding: 0;
+    height: 3vh;
+    width: 3vh;
+
+    
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background-color: var(--primary-yellow);
+}
+
+.new-project-item > .header > button:hover {
+    color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+    background-color: var(--primary-blue);
+}
+
+.new-project-item > .header > button:active {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background-color: var(--primary-yellow);
+}
+
+.new-project-item > form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0.5rem;
+    width: 100%;
+    height: auto;
+}
+
+.new-project-item > form > input {
+
+    width: 100%;
+    height: 25%;
+    padding: 0.2rem;
+    margin-bottom: 2rem;
+
+    border: 0.2rem solid var(--primary-blue);
+    border-radius: 0.5rem;
+
+    background-color: var(--primary-red);
+
+    color: black;
+    font-size: 1rem;
+}
+
+.new-project-item > form > input:focus {
+    outline: none;
+    box-shadow: 0 0 0.5rem var(--primary-blue);
+}
+
+.new-project-item > form > button {
+    width: 30%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
