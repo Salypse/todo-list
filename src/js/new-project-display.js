@@ -1,3 +1,5 @@
+import { exitProjectDisplay,  } from "./new-project-display-functions"
+
 export let makeNewProjectDisplay = function() {
     const content = document.querySelector(".content")
 
@@ -18,6 +20,9 @@ export let makeNewProjectDisplay = function() {
     const newProjectExit = document.createElement("button")
     newProjectExit.classList.add("new-project-exit")
     newProjectExit.textContent = "X"
+    newProjectExit.addEventListener("click", function() {
+        exitProjectDisplay(newProjectDisplay)
+    })
 
     newProjectFormHeader.append(newProjectHeaderText, newProjectExit)
     newProjectItem.append(newProjectFormHeader)
