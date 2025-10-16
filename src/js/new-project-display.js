@@ -40,11 +40,11 @@ export let makeNewProjectDisplay = function() {
     //New Project Submit button
     const newProjectSubmit = document.createElement("button")
     newProjectSubmit.textContent = "Submit"
-    newProjectSubmit.type = "submit"
     newProjectForm.append(newProjectSubmit)
 
     newProjectForm.addEventListener("submit", function(event) {
         event.preventDefault()
+        exitProjectDisplay(newProjectDisplay)
     })
 
     content.append(newProjectDisplay)
