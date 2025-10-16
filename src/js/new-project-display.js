@@ -1,4 +1,5 @@
 import { exitProjectDisplay,  } from "./new-project-display-functions"
+import { addProject } from "./projects-list"
 
 export let makeNewProjectDisplay = function() {
     const content = document.querySelector(".content")
@@ -45,6 +46,7 @@ export let makeNewProjectDisplay = function() {
     newProjectForm.addEventListener("submit", function(event) {
         event.preventDefault()
         exitProjectDisplay(newProjectDisplay)
+        addProject(newProjectName.value)
     })
 
     content.append(newProjectDisplay)
