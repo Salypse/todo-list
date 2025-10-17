@@ -99,7 +99,8 @@ header > button {
     text-decoration: underline;
 }
 
-.new-project-display {
+.new-project-display,
+.new-project-task {
     position: absolute;
     top: 0;
     left: 0;
@@ -144,23 +145,6 @@ header > button {
     padding: 0;
     height: 3vh;
     width: 3vh;
-
-    
-    color: var(--primary-blue);
-    border-color: var(--primary-blue);
-    background-color: var(--primary-yellow);
-}
-
-.new-project-item > .header > button:hover {
-    color: var(--primary-yellow);
-    border-color: var(--primary-yellow);
-    background-color: var(--primary-blue);
-}
-
-.new-project-item > .header > button:active {
-    color: var(--primary-blue);
-    border-color: var(--primary-blue);
-    background-color: var(--primary-yellow);
 }
 
 .new-project-item > form  {
@@ -251,4 +235,34 @@ header > button {
 .project-todos-header > button {
     font-size: 1rem;
     padding: 0.8rem;
+}
+
+.new-task-item {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    width: 30vw;
+    height: 45vh;
+
+    background-color: var(--primary-yellow);
+    border: 0.6rem solid var(--primary-blue);
+}
+
+.new-task-item .new-task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    background-color: var(--primary-light);
+    border-bottom: 0.4rem solid var(--primary-blue);
+}
+
+.new-task-header > button {
+    width: 2.5vw;
+    height: 2.5vw;
+
+    font-size: 100%;
+    padding: 0.1rem;
 }
