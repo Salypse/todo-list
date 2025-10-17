@@ -1,4 +1,4 @@
-import { exitProjectDisplay,  } from "./new-project-display-functions"
+import { exitDisplay,  } from "./display-functions"
 import { addProject } from "./projects-list"
 
 export let makeNewProjectDisplay = function() {
@@ -22,7 +22,7 @@ export let makeNewProjectDisplay = function() {
     newProjectExit.classList.add("new-project-exit")
     newProjectExit.textContent = "X"
     newProjectExit.addEventListener("click", function() {
-        exitProjectDisplay(newProjectDisplay)
+        exitDisplay(newProjectDisplay)
     })
 
     newProjectFormHeader.append(newProjectHeaderText, newProjectExit)
