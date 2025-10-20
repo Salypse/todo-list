@@ -1,6 +1,6 @@
 import "./styles.css"
 import { makeNewProjectDisplay } from "./js/new-project-display"
-import { displayCurrentProjects } from "./js/projects-list"
+import { displayCurrentProjects } from "./js/display-functions"
 
 const contentHandler = (function() {
     const newProjectButton = document.querySelector("#new-project-button")

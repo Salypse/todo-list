@@ -1,15 +1,26 @@
-import { currentProjects } from "./projects-list"
+import { newProjectTaskDisplay } from "./new-project-task-dislay";
 
-export const addTaskToProject = function(projectName, taskName, taskDescription, taskDate, taskPriority) {
-    const newTaskValues = {
-        "taskName": taskName,
-        "description": taskDescription,
-        "dueDate": taskDate,
-        "priority": taskPriority,
-    }
-    
-    const project = currentProjects.find(item => item.name === projectName)
+export const displayProjectTodo = function(project) {
+    const content = document.querySelector(".content")
+    content.innerHTML = ""
 
-    project.tasks.push(newTaskValues)
-    console.log(project.tasks)
+    const contentHeader = document.createElement("div");
+    contentHeader.classList.add("project-todos-header")
+
+    const headerTitle = document.createElement("h1");
+    headerTitle.classList.add("header-title")
+    headerTitle.textContent = project.name;
+
+    const headerAddTask = document.createElement("button")
+    headerAddTask.textContent = "Add Task"
+    headerAddTask.addEventListener("click", function() {
+        newProjectTaskDisplay()
+    })
+
+    contentHeader.append(headerTitle, headerAddTask)
+    content.append(contentHeader)
+
+    //TODO
+        //display all todos of current project
+
 }

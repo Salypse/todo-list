@@ -1,4 +1,4 @@
-import { displayProjectTodo } from "./project-todo"
+import { displayCurrentProjects } from "./display-functions"
 
 export let currentProjects = [
     {name: "Welcome",
@@ -16,18 +16,4 @@ export let currentProjects = [
 export const addProject = function(projectName) {
     currentProjects.push({"name": projectName, "tasks": []})
     displayCurrentProjects()
-}
-
-export const displayCurrentProjects = function() {
-    const currentProjectsList = document.querySelector(".current-projects")
-    currentProjectsList.innerHTML = ""
-
-    currentProjects.forEach(project => {
-        let projectToAdd = document.createElement("button")
-        projectToAdd.textContent = project.name
-        projectToAdd.addEventListener("click", function() {
-            displayProjectTodo(project)
-        })
-        currentProjectsList.append(projectToAdd)
-    })
 }
