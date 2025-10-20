@@ -220,7 +220,7 @@ header > button {
     background-color: var(--primary-light);
 }
 
-.project-todos-header {
+.project-tasks-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -228,11 +228,11 @@ header > button {
     padding: 0.5rem;
 }
 
-.project-todos-header > h1 {
+.project-tasks-header > h1 {
     color: var(--primary-blue);
 }
 
-.project-todos-header > button {
+.project-tasks-header > button {
     font-size: 1rem;
     padding: 0.8rem;
 }

@@ -1,11 +1,12 @@
 import { newProjectTaskDisplay } from "./new-project-task-dislay";
+import { displayCurrentTasks } from "./display-functions";
 
 export const displayProjectTodo = function(project) {
     const content = document.querySelector(".content")
     content.innerHTML = ""
 
     const contentHeader = document.createElement("div");
-    contentHeader.classList.add("project-todos-header")
+    contentHeader.classList.add("project-tasks-header")
 
     const headerTitle = document.createElement("h1");
     headerTitle.classList.add("header-title")
@@ -20,7 +21,10 @@ export const displayProjectTodo = function(project) {
     contentHeader.append(headerTitle, headerAddTask)
     content.append(contentHeader)
 
-    //TODO
-        //display all todos of current project
+    const currentProjectTasks = document.createElement("div")
+    currentProjectTasks.classList.add("current-tasks")
+    content.append(currentProjectTasks)
+
+    displayCurrentTasks(project.name)
 
 }
