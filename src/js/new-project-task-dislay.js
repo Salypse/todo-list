@@ -1,4 +1,5 @@
 import { exitDisplay } from "./display-functions"
+import { addTaskToProject } from "./tasks-display"
 
 export const newProjectTaskDisplay = function() {
     const content = document.querySelector(".content")
@@ -82,6 +83,10 @@ export const newProjectTaskDisplay = function() {
     newProjectTaskItem.addEventListener("submit", function(event) {
         event.preventDefault()
         exitDisplay(newProjectTaskDisplay)
+
+        const headerTitle = document.querySelector(".header-title")
+        addTaskToProject(headerTitle.textContent, newTaskName.value, newTaskDescription.value, newTaskDate.value, newTaskPriority.value)
+        
     })
 
     content.append(newProjectTaskDisplay)

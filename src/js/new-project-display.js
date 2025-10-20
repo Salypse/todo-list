@@ -45,7 +45,7 @@ export let makeNewProjectDisplay = function() {
 
     newProjectForm.addEventListener("submit", function(event) {
         event.preventDefault()
-        exitProjectDisplay(newProjectDisplay)
+        exitDisplay(newProjectDisplay)
         addProject(newProjectName.value)
     })
 

@@ -8,6 +8,7 @@ export const displayProjectTodo = function(project) {
     contentHeader.classList.add("project-todos-header")
 
     const headerTitle = document.createElement("h1");
+    headerTitle.classList.add("header-title")
     headerTitle.textContent = project.name;
 
     const headerAddTask = document.createElement("button")
