@@ -1,5 +1,5 @@
 import { newProjectTaskDisplay } from "./new-project-task-dislay";
-import { displayCurrentTasks } from "./display-functions";
+import { displayCurrentTasks } from "./display-tasks";
 
 export const displayProjectTodo = function(project) {
     const content = document.querySelector(".content")

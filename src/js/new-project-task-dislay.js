@@ -1,5 +1,5 @@
 import { exitDisplay } from "./display-functions"
-import { addTaskToProject } from "./project-todo"
+import { addTaskToProject } from "./project-tasks"
 
 export const newProjectTaskDisplay = function() {
     const content = document.querySelector(".content")
