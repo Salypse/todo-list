@@ -99,16 +99,8 @@ header > button {
     text-decoration: underline;
 }
 
-.content {
-    grid-area: 2 / 2 / -1 / -1 ;
-    width: 100%;
-    height: 100%;
-
-    background-color: var(--primary-light);
-}
-
-
-.new-project-display {
+.new-project-display,
+.new-project-task {
     position: absolute;
     top: 0;
     left: 0;
@@ -153,23 +145,6 @@ header > button {
     padding: 0;
     height: 3vh;
     width: 3vh;
-
-    
-    color: var(--primary-blue);
-    border-color: var(--primary-blue);
-    background-color: var(--primary-yellow);
-}
-
-.new-project-item > .header > button:hover {
-    color: var(--primary-yellow);
-    border-color: var(--primary-yellow);
-    background-color: var(--primary-blue);
-}
-
-.new-project-item > .header > button:active {
-    color: var(--primary-blue);
-    border-color: var(--primary-blue);
-    background-color: var(--primary-yellow);
 }
 
 .new-project-item > form  {
@@ -232,4 +207,177 @@ header > button {
 
 .current-projects > button:active {
     color: var(--primary-light);
+}
+
+.content {
+    grid-area: 2 / 2 / -1 / -1 ;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--primary-light);
+}
+
+.project-tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+}
+
+.project-tasks-header > h1 {
+    color: var(--primary-blue);
+}
+
+.project-tasks-header > button {
+    font-size: 1rem;
+    padding: 0.8rem;
+}
+
+.new-task-item {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    width: 30vw;
+    height: 40vh;
+
+    background-color: var(--primary-yellow);
+    border: 0.6rem solid var(--primary-blue);
+}
+
+.new-task-item .new-task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.5rem;
+
+    background-color: var(--primary-light);
+    border-bottom: 0.4rem solid var(--primary-blue);
+}
+
+.new-task-header > button {
+    width: 2.5vw;
+    height: 2.5vw;
+
+    font-size: 100%;
+    padding: 0.1rem;
+}
+
+.new-task-item > form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+}
+
+.new-task-form > * {
+    width: 100%;
+    height: 15%;
+    padding: 0.3rem;
+
+    font-size: 1rem;
+    background-color: var(--primary-red);
+
+    border: 0.3rem solid var(--primary-blue);
+    border-radius: 0.5rem;
+}
+
+.new-task-form > input:focus {
+    outline: none;
+    box-shadow: 0 0 0.5rem var(--primary-blue);
+}
+
+.new-task-form > button {
+    align-self: center;
+
+    height: 20%;
+    width: 25%;
+    
+    margin:1rem;
+
+    background-color: var(--primary-light);
+}
+
+.new-task-form > button:hover {
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+    background-color: var(--primary-blue);
+}
+
+.new-task-form > button:active {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    background-color: var(--primary-light);
+}
+
+.current-tasks {
+    padding: 1rem;
+}
+
+.current-tasks > .project-task {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 4fr 1fr;
+
+    height: auto;
+    width: 33%;
+
+    color: var(--primary-blue);
+    font-weight: 700;
+
+    border: 0.5rem solid var(--primary-blue);
+    border-radius: 5%;
+
+    background-color: var(--primary-yellow);
+}
+
+.project-task .task-header {
+    grid-area: 1 / 1 / 2 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25rem;
+    border-bottom: 0.3rem solid var(--primary-blue);
+}
+
+.task-header button {
+    font-size: 100%;
+    padding: 0.5rem;
+}
+
+.project-task .task-content {
+    grid-area: 2 / 1 / 3 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 0.25rem;
+
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.task-content .sub-tasks{
+    align-self: flex-start;
+    text-decoration: underline;
+}
+
+.project-task .task-footer {
+    grid-area: 3 / 1 / 4 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25rem;
+
+    border-top: 0.3rem solid var(--primary-blue);
 }

@@ -1,20 +1,19 @@
+import { displayCurrentProjects } from "./display-functions"
+
 export let currentProjects = [
-    {"name": "Welcome"},
+    {name: "Welcome",
+        tasks : [
+            {
+                taskName: "Create your own project",
+                description: "Create your own project by clicking the new project button",
+                dueDate: "Today",
+                priority: "1",
+            }
+        ]
+    },
 ]
 
 export const addProject = function(projectName) {
-    currentProjects.push({"name": projectName})
-    console.log(currentProjects)
+    currentProjects.push({"name": projectName, "tasks": []})
     displayCurrentProjects()
-}
-
-export const displayCurrentProjects = function() {
-    const currentProjectsList = document.querySelector(".current-projects")
-    currentProjectsList.innerHTML = ""
-
-    currentProjects.forEach(project => {
-        let projectToAdd = document.createElement("button")
-        projectToAdd.textContent = project.name
-        currentProjectsList.append(projectToAdd)
-    })
 }
