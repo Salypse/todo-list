@@ -228,7 +228,12 @@ header > button {
     padding: 0.5rem;
 }
 
-.project-tasks-header > h1 {
+.project-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
     color: var(--primary-blue);
 }
 

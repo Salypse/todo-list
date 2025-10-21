@@ -1,5 +1,6 @@
 import { newProjectTaskDisplay } from "./new-project-task-dislay";
 import { displayCurrentTasks } from "./display-tasks";
+import { deleteProject } from "./projects-list";
 
 export const displayProjectTodo = function(project) {
     const content = document.querySelector(".content")
@@ -8,9 +9,20 @@ export const displayProjectTodo = function(project) {
     const contentHeader = document.createElement("div");
     contentHeader.classList.add("project-tasks-header")
 
+    const projectTitle = document.createElement("div")
+    projectTitle.classList.add("project-title")
+
     const headerTitle = document.createElement("h1");
     headerTitle.classList.add("header-title")
     headerTitle.textContent = project.name;
+
+    const removeProject = document.createElement("button")
+    removeProject.textContent = "Delete Project"
+    removeProject.addEventListener("click", function() {
+        deleteProject(project.name)
+    })
+
+    projectTitle.append(headerTitle, removeProject)
 
     const headerAddTask = document.createElement("button")
     headerAddTask.textContent = "Add Task"
@@ -18,7 +30,7 @@ export const displayProjectTodo = function(project) {
         newProjectTaskDisplay()
     })
 
-    contentHeader.append(headerTitle, headerAddTask)
+    contentHeader.append(projectTitle, headerAddTask)
     content.append(contentHeader)
 
     const currentProjectTasks = document.createElement("div")
@@ -26,5 +38,4 @@ export const displayProjectTodo = function(project) {
     content.append(currentProjectTasks)
 
     displayCurrentTasks(project.name)
-
 }
