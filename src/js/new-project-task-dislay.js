@@ -52,12 +52,19 @@ export const newProjectTaskDisplay = function() {
     //New Task Priority Selection
     const newTaskPriority = document.createElement("select")
     newTaskName.name = "newTaskPriority"
+
     let priorityOptions = [
-        {value: "default", text: "Choose Task Priority"},
         {value: "priority1", text: "1"},
         {value: "priority2", text: "2"},
         {value: "priority3", text: "3"},
     ]
+
+    const defaultOption = document.createElement('option')
+    defaultOption.selected = true
+    defaultOption.disabled = true
+    defaultOption.value = ""
+    defaultOption.textContent = "Choose Task Priority"
+    newTaskPriority.append(defaultOption)
 
     priorityOptions.forEach(option => {
         const newOption = document.createElement("option")
@@ -82,11 +89,23 @@ export const newProjectTaskDisplay = function() {
     newProjectTaskItem.append(newProjectTaskForm)
     newProjectTaskItem.addEventListener("submit", function(event) {
         event.preventDefault()
-        exitDisplay(newProjectTaskDisplay)
-
-        const headerTitle = document.querySelector(".header-title")
-        addTaskToProject(headerTitle.textContent, newTaskName.value, newTaskDescription.value, newTaskDate.value, newTaskPriority.value)
         
+        const dueDateRegex = /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{2}$/
+
+        if (newTaskName.value.length <= 0) {
+            alert("Please enter a task name")
+        } else if (newTaskDescription.value.length <= 0) {
+            alert("Please enter a task description")
+        } else if (!dueDateRegex.test(newTaskDate.value)) {
+            alert("Please enter date in MM/DD/YY format")
+        } else if (newTaskPriority.value === "") {
+            alert("Please enter a task priority")
+        } else {
+            exitDisplay(newProjectTaskDisplay)
+
+            const headerTitle = document.querySelector(".header-title")
+            addTaskToProject(headerTitle.textContent, newTaskName.value, newTaskDescription.value, newTaskDate.value, newTaskPriority.value)
+        }
     })
 
     content.append(newProjectTaskDisplay)

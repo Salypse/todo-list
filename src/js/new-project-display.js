@@ -45,8 +45,12 @@ export let makeNewProjectDisplay = function() {
 
     newProjectForm.addEventListener("submit", function(event) {
         event.preventDefault()
-        exitDisplay(newProjectDisplay)
-        addProject(newProjectName.value)
+        if (newProjectName.value === "") {
+            alert("Please enter a Project Name")
+        } else {
+            exitDisplay(newProjectDisplay)
+            addProject(newProjectName.value)
+        }
     })
 
     content.append(newProjectDisplay)
