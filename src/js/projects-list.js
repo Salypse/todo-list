@@ -1,5 +1,5 @@
 import { displayCurrentProjects } from "./display-functions"
-
+import { exitDisplay } from "./display-functions"
 export let currentProjects = [
     {name: "Welcome",
         tasks : [
@@ -15,5 +15,13 @@ export let currentProjects = [
 
 export const addProject = function(projectName) {
     currentProjects.push({"name": projectName, "tasks": []})
+    displayCurrentProjects()
+}
+
+export const deleteProject = function(projectName) {
+    const content = document.querySelector(".content")
+
+    currentProjects = currentProjects.filter(project => project.name !== projectName)
+    content.innerHTML = ""
     displayCurrentProjects()
 }
