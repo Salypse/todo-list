@@ -1,6 +1,8 @@
 import { exitDisplay } from "./display-functions"
+import { displaySubTasks } from "./display-sub-tasks"
+import { addSubTask } from "./project-sub-tasks"
 
-export const newSubTaskDisplay = function() {
+export const newSubTaskDisplay = function(activeProject, currentTaskName, subTaskList) {
     const content = document.querySelector(".content")
 
     const newSubTask = document.createElement("div")
@@ -49,6 +51,8 @@ export const newSubTaskDisplay = function() {
             alert("Please enter a Sub Task Name")
         } else {
             exitDisplay(newSubTaskDisplay)
+            addSubTask(activeProject, currentTaskName, newSubTaskName.value)
+            displaySubTasks(activeProject, currentTaskName, subTaskList)
         }
     })
 
@@ -58,8 +62,4 @@ export const newSubTaskDisplay = function() {
         newSubTaskForm,
     )
     newSubTaskDisplay.append(newSubTaskItem)
-
-    //TODO
-        //Sub task name form
-        //Sub task form Submit
 }

@@ -1,13 +1,13 @@
 import { currentProjects } from "./projects-list"
 import { removeTaskFromProject } from "./project-tasks"
 import { newSubTaskDisplay } from "./new-sub-task-display"
+import { displaySubTasks } from "./display-sub-tasks"
 
 export const displayCurrentTasks = function(projectName) {
     const currentTasks = document.querySelector(".current-tasks")
     currentTasks.innerHTML = ""
 
     const activeProject = currentProjects.find(project => project.name === projectName)
-    console.log(activeProject)
 
     activeProject.tasks.forEach(task => {
         const taskToAdd = document.createElement("div")
@@ -37,9 +37,16 @@ export const displayCurrentTasks = function(projectName) {
 
         const subTasks = document.createElement("div")
         subTasks.classList.add("sub-tasks")
-        subTasks.textContent = "Sub Tasks: "
 
-        taskContent.append(taskDescription, subTasks)
+        const subTasksHeader = document.createElement("p")
+        subTasksHeader.textContent = "Sub Tasks: "
+
+        const subTaskList = document.createElement("ul")
+        displaySubTasks(activeProject, task.taskName, subTaskList)
+
+        subTasks.append(subTasksHeader, subTaskList)
+
+        taskContent.append(taskDescription,subTasks)
 
 
         //New task footer
@@ -60,7 +67,7 @@ export const displayCurrentTasks = function(projectName) {
         const addSubTask = document.createElement("button")
         addSubTask.textContent = "Add Sub-Task"
         addSubTask.addEventListener("click", function() {
-            newSubTaskDisplay()
+            newSubTaskDisplay(activeProject, task.taskName, subTaskList)
         })
 
 

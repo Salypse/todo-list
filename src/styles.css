@@ -380,9 +380,23 @@ header > button {
     font-size: 1.2rem;
 }
 
-.task-content .sub-tasks{
+.task-content .sub-tasks > p{
     align-self: flex-start;
     text-decoration: underline;
+
+    margin-bottom: 0.5rem;
+}
+
+.sub-tasks > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 1rem;
+}
+
+.sub-tasks > ul > li {
+    list-style-type: "- ";
 }
 
 .project-task .task-footer {

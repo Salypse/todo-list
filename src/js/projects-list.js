@@ -8,6 +8,9 @@ export let currentProjects = [
                 description: "Create your own project by clicking the new project button",
                 dueDate: "Today",
                 priority: "1",
+                subTasks: [
+                    {subTaskName: "Test"}
+                ],
             }
         ]
     },

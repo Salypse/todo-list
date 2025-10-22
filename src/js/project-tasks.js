@@ -7,11 +7,12 @@ export const addTaskToProject = function(projectName, taskName, taskDescription,
         "description": taskDescription,
         "dueDate": taskDate,
         "priority": taskPriority,
+        "subTasks": []
     }
 
     const project = currentProjects.find(item => item.name === projectName)
-
     project.tasks.push(newTaskValues)
+    
     displayCurrentTasks(projectName)
 }
 
