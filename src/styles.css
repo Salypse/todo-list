@@ -332,6 +332,10 @@ header > button {
 }
 
 .current-tasks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
     padding: 1rem;
 }
 
@@ -340,8 +344,7 @@ header > button {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 4fr 1fr;
 
-    height: auto;
-    width: 33%;
+    height: 30vh;
 
     color: var(--primary-blue);
     font-weight: 700;
