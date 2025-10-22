@@ -1,5 +1,7 @@
 import { currentProjects } from "./projects-list"
 import { removeTaskFromProject } from "./project-tasks"
+import { newSubTaskDisplay } from "./new-sub-task-display"
+
 export const displayCurrentTasks = function(projectName) {
     const currentTasks = document.querySelector(".current-tasks")
     currentTasks.innerHTML = ""
@@ -57,6 +59,10 @@ export const displayCurrentTasks = function(projectName) {
 
         const addSubTask = document.createElement("button")
         addSubTask.textContent = "Add Sub-Task"
+        addSubTask.addEventListener("click", function() {
+            newSubTaskDisplay()
+        })
+
 
         taskFooter.append(taskInfo, addSubTask,)
 
