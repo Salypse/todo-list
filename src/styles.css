@@ -380,23 +380,36 @@ header > button {
     font-size: 1.2rem;
 }
 
-.task-content .sub-tasks > p{
-    align-self: flex-start;
+.sub-tasks > p{
     text-decoration: underline;
 
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
-.sub-tasks > ul {
+.sub-tasks {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    padding: 1rem;
 }
 
-.sub-tasks > ul > li {
-    list-style-type: "- ";
+.sub-tasks-buttons > button {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem;
+
+    border: transparent;
+    background-color: transparent;
+
+    font-size: 1.2rem;
+}
+
+.sub-tasks-buttons > button:hover {
+    color: red;
+}
+
+.sub-tasks-buttons > button:active {
+    color: var(--primary-blue);
 }
 
 .project-task .task-footer {

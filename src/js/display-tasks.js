@@ -41,7 +41,8 @@ export const displayCurrentTasks = function(projectName) {
         const subTasksHeader = document.createElement("p")
         subTasksHeader.textContent = "Sub Tasks: "
 
-        const subTaskList = document.createElement("ul")
+        const subTaskList = document.createElement("div")
+        subTaskList.classList.add("sub-tasks-buttons")
         displaySubTasks(activeProject, task.taskName, subTaskList)
 
         subTasks.append(subTasksHeader, subTaskList)
