@@ -1,4 +1,4 @@
-import { currentProjects } from "./projects-list"
+import currentProjects from "../json/current-projects.json"
 import { displayProjectTodo } from "./tasks-content"
 
 export const exitDisplay = function(currentDisplay) {

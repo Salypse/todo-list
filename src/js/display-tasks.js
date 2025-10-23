@@ -1,4 +1,4 @@
-import { currentProjects } from "./projects-list"
+import currentProjects from "../json/current-projects.json"
 import { removeTaskFromProject } from "./project-tasks"
 import { newSubTaskDisplay } from "./new-sub-task-display"
 import { displaySubTasks } from "./display-sub-tasks"
