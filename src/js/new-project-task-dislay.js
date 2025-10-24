@@ -1,7 +1,7 @@
 import { exitDisplay } from "./display-functions"
 import { addTaskToProject } from "./project-tasks"
 
-export const newProjectTaskDisplay = function() {
+export const newProjectTaskDisplay = function(currentProjects) {
     const content = document.querySelector(".content")
 
     const newProjectTaskDisplay = document.createElement("div")

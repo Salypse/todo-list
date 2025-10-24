@@ -1,14 +1,15 @@
-import currentProjects from "../json/current-projects.json"
 import { removeTaskFromProject } from "./project-tasks"
 import { newSubTaskDisplay } from "./new-sub-task-display"
 import { displaySubTasks } from "./display-sub-tasks"
+import { getUserData } from "./save-data"
 
 export const displayCurrentTasks = function(projectName) {
     const currentTasks = document.querySelector(".current-tasks")
     currentTasks.innerHTML = ""
 
-    const activeProject = currentProjects.find(project => project.name === projectName)
-
+    const userCurrentProjects = getUserData()
+    const activeProject = userCurrentProjects.find(project => project.name === projectName)
+    
     activeProject.tasks.forEach(task => {
         const taskToAdd = document.createElement("div")
         taskToAdd.classList.add("project-task")
@@ -23,7 +24,7 @@ export const displayCurrentTasks = function(projectName) {
         const removeTask = document.createElement("button")
         removeTask.textContent = "X"
         removeTask.addEventListener("click", function() {
-            removeTaskFromProject(projectName, task.taskName)
+            removeTaskFromProject(activeProject.name, task.taskName)
         })
 
         taskHeader.append(headerText, removeTask)

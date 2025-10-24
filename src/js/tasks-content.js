@@ -1,6 +1,7 @@
 import { newProjectTaskDisplay } from "./new-project-task-dislay";
 import { displayCurrentTasks } from "./display-tasks";
 import { deleteProject } from "./projects-list";
+import { getUserData } from "./save-data";
 
 export const displayProjectTodo = function(project) {
     const content = document.querySelector(".content")

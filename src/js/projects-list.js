@@ -1,15 +1,21 @@
 import { displayCurrentProjects } from "./display-functions"
-import currentProjects from "../json/current-projects.json"
+import { getUserData, saveUserData } from "./save-data"
 
 export const addProject = function(projectName) {
-    currentProjects.push({"name": projectName, "tasks": []})
-    displayCurrentProjects()
+    const userCurrentProjects = getUserData()
+
+    userCurrentProjects.push({"name": projectName, "tasks": []})
+    saveUserData(userCurrentProjects)
+    displayCurrentProjects(userCurrentProjects)
 }
 
 export const deleteProject = function(projectName) {
     const content = document.querySelector(".content")
 
-    currentProjects = currentProjects.filter(project => project.name !== projectName)
+    const userCurrentProjects = getUserData()
+
+    let updatedProjects = userCurrentProjects.filter(project => project.name !== projectName)
+    saveUserData(updatedProjects)
     content.innerHTML = ""
-    displayCurrentProjects()
+    displayCurrentProjects(updatedProjects)
 }
