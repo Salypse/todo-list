@@ -1,5 +1,5 @@
-import currentProjects from "../json/current-projects.json"
 import { displayCurrentTasks } from "./display-tasks"
+import { getUserData, saveUserData } from "./save-data"
 
 export const addTaskToProject = function(projectName, taskName, taskDescription, taskDate, taskPriority) {
     const newTaskValues = {
@@ -9,23 +9,21 @@ export const addTaskToProject = function(projectName, taskName, taskDescription,
         "priority": taskPriority,
         "subTasks": []
     }
+    const userCurrentProjects = getUserData()
 
-    const project = currentProjects.find(item => item.name === projectName)
-    project.tasks.push(newTaskValues)
-    
+    const activeProject = userCurrentProjects.find(item => item.name === projectName)
+    activeProject.tasks.push(newTaskValues)
+    saveUserData(userCurrentProjects)
+
     displayCurrentTasks(projectName)
 }
 
 export const removeTaskFromProject = function(projectName, taskName) {
-    let project = currentProjects.find(item => item.name === projectName)
-
-    project.tasks = project.tasks.filter(task => task.taskName != taskName)
-    currentProjects.forEach(item => {
-        if (item.name === projectName) {
-            item.tasks = project.tasks
-            displayCurrentTasks(projectName)
-            return;
-        }
-    })
-    console.log(currentProjects)
+    const userCurrentProjects = getUserData()
+    
+    const activeProject = userCurrentProjects.find(item => item.name === projectName)
+    activeProject.tasks = activeProject.tasks.filter(task => task.taskName != taskName)
+    
+    saveUserData(userCurrentProjects)
+    displayCurrentTasks(projectName)
 }

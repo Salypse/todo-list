@@ -51,7 +51,7 @@ export const newSubTaskDisplay = function(activeProject, currentTaskName, subTas
             alert("Please enter a Sub Task Name")
         } else {
             exitDisplay(newSubTaskDisplay)
-            addSubTask(activeProject, currentTaskName, newSubTaskName.value)
+            addSubTask(activeProject.name, currentTaskName, newSubTaskName.value)
             displaySubTasks(activeProject, currentTaskName, subTaskList)
         }
     })

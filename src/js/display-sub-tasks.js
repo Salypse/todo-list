@@ -10,7 +10,7 @@ export const displaySubTasks = function(activeProject, currentTaskName, subTaskL
                 newListItem.textContent = `- ${subTask.subTaskName}`
 
                 newListItem.addEventListener("click", function() {
-                    removeSubTask(activeProject, task, subTask.subTaskName)
+                    removeSubTask(activeProject.name, currentTaskName, subTask.subTaskName)
                 })
                 subTaskList.append(newListItem)
             })
