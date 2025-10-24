@@ -1,4 +1,4 @@
-import { currentProjects } from "./projects-list"
+import currentProjects from "../json/current-projects.json"
 import { displayCurrentTasks } from "./display-tasks"
 
 export const addTaskToProject = function(projectName, taskName, taskDescription, taskDate, taskPriority) {

@@ -9,6 +9,4 @@ const contentHandler = (function() {
     })
 
     displayCurrentProjects()
-
-
 }())

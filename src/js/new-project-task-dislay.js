@@ -54,9 +54,9 @@ export const newProjectTaskDisplay = function() {
     newTaskName.name = "newTaskPriority"
 
     let priorityOptions = [
-        {value: "priority1", text: "1"},
-        {value: "priority2", text: "2"},
-        {value: "priority3", text: "3"},
+        {value: "1", text: "1"},
+        {value: "2", text: "2"},
+        {value: "3", text: "3"},
     ]
 
     const defaultOption = document.createElement('option')
