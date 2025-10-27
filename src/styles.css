@@ -65,19 +65,19 @@ header {
 
 header > .logo {
     display: flex;
-    align-self: center;
+    align-items: center;
     justify-self: center;
 
-    font-size: 3rem;
+    font-size: clamp(2vw, 3rem, 4vw);
 }
 
 .logo > img {
-    width: 3vw;
+    width: clamp(1vw, 3vw, 5vw);
     height: auto;
 }
 
 header > button {
-    font-size: 1.5rem;
+    font-size: clamp(1.2vw, 1.5rem, 3vw);
 }
 
 .sidebar {
@@ -99,7 +99,7 @@ header > button {
     margin-bottom: 1rem;
 
     color: var(--primary-blue);
-    font-size: 1.8rem;
+    font-size: clamp(1vw, 1.75rem, 4vw);
     text-align: center;
 
     text-decoration: underline;
@@ -147,7 +147,7 @@ header > button {
 
 .new-project-item > .header > p,
 .new-sub-task-item > .hedaer > p {
-    font-size: 1.5rem;
+    font-size: clamp(2vw, 1.5rem, 3.5vw);
     font-weight: 700;
 }
 
@@ -183,7 +183,7 @@ header > button {
     background-color: var(--primary-red);
 
     color: black;
-    font-size: 1rem;
+    font-size: clamp(1vw, 1rem, 3vw);
 }
 
 .new-project-item > form > input:focus,
@@ -196,7 +196,7 @@ header > button {
 .new-sub-task-item > form > button {
     width: 30%;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: clamp(0.5vw, 1rem, 1vw);
 }
 
 .sidebar > .current-projects {
@@ -210,7 +210,7 @@ header > button {
     border: transparent;
     background-color: transparent;
 
-    font-size: 1.2rem;
+    font-size: clamp(1vw, 1.2rem, 4vw);
     color: var(--primary-light);
 
     padding: 0;
@@ -253,14 +253,18 @@ header > button {
     color: var(--primary-blue);
 }
 
+.header-title {
+    font-size: clamp(0.8vw, 2rem, 1.75rem);
+}
+
 .project-title > button {
     text-align: center;
     padding: 0.5rem;
-    font-size: 1rem;
+    font-size: clamp(0.75vw, 1rem, 1.5vw);
 }
 
 .project-tasks-header > button {
-    font-size: 1rem;
+    font-size: clamp(0.75vw, 1rem, 1.5vw);
     padding: 0.5rem;
 }
 
@@ -309,7 +313,7 @@ header > button {
     height: 15%;
     padding: 0.3rem;
 
-    font-size: 1rem;
+    font-size: clamp(1vw, 1.2rem, 3vw);
     background-color: var(--primary-red);
 
     border: 0.3rem solid var(--primary-blue);
@@ -346,8 +350,7 @@ header > button {
 
 .current-tasks {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     gap: 1rem;
 
     padding: 1rem;
@@ -359,7 +362,6 @@ header > button {
     grid-template-rows: 1fr 4fr 1fr;
 
     height: auto;
-    width: 100%;
 
     color: var(--primary-blue);
     font-weight: 700;
@@ -381,7 +383,7 @@ header > button {
 }
 
 .task-header button {
-    font-size: 100%;
+    font-size: clamp(0.5vw, 100%, 1.5vw);
     padding: 0.5rem;
 }
 
@@ -395,14 +397,14 @@ header > button {
     padding: 0.25rem;
 
     text-align: center;
-    font-size: 1.2rem;
+    font-size: clamp(1vw, 1.2rem, 2vw);
 }
 
 .sub-tasks > p{
     text-decoration: underline;
 
     margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.2vw, 1.5rem, 2.5vw);
 }
 
 .sub-tasks {
