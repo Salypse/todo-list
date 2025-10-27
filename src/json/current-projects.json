@@ -2,12 +2,49 @@
     {"name": "Welcome",
         "tasks" : [
             {
-                "taskName": "Create your own project",
-                "description": "Create your own project by clicking the new project button",
+                "taskName": "Welcome",
+                "description": "Creating your own project",
                 "dueDate": "Today",
                 "priority": "1",
                 "subTasks": [
-                    {"subTaskName": "Test"}
+                    {"subTaskName": "Create your own Project by clicking the new project button"},
+                    {"subTaskName": "Enter a Project Name and press Submit"},
+                    {"subTaskName": "Click on your new project on the Project list"}
+                ]
+            },
+
+            {
+                "taskName": "Your First Task",
+                "description": "Creating your first task",
+                "dueDate": "Today",
+                "priority": "1",
+                "subTasks": [
+                    {"subTaskName": "Create a new task by clicking the new task button"},
+                    {"subTaskName": "Enter the New Task details such as name, due-date, etc."},
+                    {"subTaskName": "To delete a task press the X button on the top left corner of a task (Try it with this task)"}
+                ]
+            },
+
+            {
+                "taskName": "Your First Sub-Tass",
+                "description": "Creating your first sub-task",
+                "dueDate": "Today",
+                "priority": "1",
+                "subTasks": [
+                    {"subTaskName": "Create a new sub-task by clicking the new sub-task button"},
+                    {"subTaskName": "Enter the New Task name and press submit"},
+                    {"subTaskName": "Click on any of your sub-tasks to remove them from a task (Try it with this sub-task)"}
+                ]
+            },
+
+            {
+                "taskName": "Deleting a Project",
+                "description": "Deleting one of your projects",
+                "dueDate": "Today",
+                "priority": "1",
+                "subTasks": [
+                    {"subTaskName": "To delete one your projects press the Delete Project button near the top next to the project name"},
+                    {"subTaskName": "Enjoy the website! (This Project is safe to delete now)"}
                 ]
             }
         ]
